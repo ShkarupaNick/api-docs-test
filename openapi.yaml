@@ -2,14 +2,11 @@ openapi: 3.1.0
 info:
   title: Redocly Museum API
   description: Imaginary, but delightful Museum API for interacting with museum services and information. Built with love by Redocly.
-  version: 1.1.1
+  version: 5.1.1
   termsOfService: 'https://redocly.com/subscription-agreement/'
   contact:
     email: team@redocly.com
     url: "https://redocly.com/docs/cli/"
-  license:
-    name: MIT
-    url: "https://opensource.org/license/mit/"
 servers:
   - url: "https://api.fake-museum-example.com/v1.1"
 paths:
@@ -34,7 +31,7 @@ paths:
               examples:
                 default_example:
                   $ref: "#/components/examples/GetMuseumHoursResponseExample"
-        "400":
+        "200":
           $ref: '#/components/responses/BadRequest'
         "404":
           $ref: '#/components/responses/NotFound'
