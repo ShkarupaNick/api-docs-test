@@ -7,9 +7,6 @@ info:
   contact:
     email: team@redocly.com
     url: "https://redocly.com/docs/cli/"
-  license:
-    name: MIT
-    url: "https://opensource.org/license/mit/"
 servers:
   - url: "https://api.fake-museum-example.com/v1.1"
 paths:
@@ -34,7 +31,7 @@ paths:
               examples:
                 default_example:
                   $ref: "#/components/examples/GetMuseumHoursResponseExample"
-        "400":
+        "200":
           $ref: '#/components/responses/BadRequest'
         "404":
           $ref: '#/components/responses/NotFound'
