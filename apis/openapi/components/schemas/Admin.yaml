@@ -8,7 +8,7 @@ allOf:
         enum:
           - admin
           - basic
-      adminDept:
+      adminDeptV2:
         type: string
         description: "One or more departments which the admin user controls."
         default: all
