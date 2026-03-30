@@ -45,6 +45,7 @@ paths:
       operationId: createSpecialEvent
       tags:
         - Events
+        - Phone number
       requestBody:
         required: true
         content:
@@ -149,7 +150,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     delete:
       summary: Delete special event
-      description: Delete a special event from the collection. Allows museum to cancel planned events.
+      description: Delete all events.
       operationId: deleteSpecialEvent
       tags:
         - Events
