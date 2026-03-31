@@ -167,7 +167,7 @@ paths:
   /tickets:
     post:
       summary: Buy museum tickets
-      description: Purchase museum tickets for general entry or special events.
+      description: Get All ticket events.
       operationId: buyMuseumTickets
       tags:
         - Tickets
