@@ -15,4 +15,4 @@ The Museum API is a sample API that you can use to try out new API tools, to lea
 The [OpenAPI description](./openapi.yaml) can be found in `openapi.yaml`.
 You can also download it and use it as you wish.
 
-Museum API allows to list all museums in the worls.
+Museum API allows to list all museums in the world.
