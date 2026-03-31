@@ -19,7 +19,7 @@ rules:
     subject:
       type: Example
       property: summary
-    rule/underscore_operation:
+  rule/underscore_operation:
     subject:
       type: Operation
       property: id
