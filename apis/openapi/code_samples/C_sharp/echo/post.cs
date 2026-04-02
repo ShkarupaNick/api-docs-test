@@ -10,3 +10,10 @@ else
   // Something wrong -- check response for errors
   Console.WriteLine(response.getRawResponse());
 }
+
+
+const error = {
+    message: "test error"
+}
+
+console.error(error);

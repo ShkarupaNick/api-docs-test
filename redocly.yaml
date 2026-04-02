@@ -22,6 +22,9 @@ rules:
     message: Example summary must be sentence cased.
     assertions:
       pattern: /^([A-Z]{2,}|[A-Z][^A-Z]*)\b(\s+(?:[A-Z]{2,}|[^A-Z]*)\b)*$/ # Sentence case but allow acronyms
-
+  rule/example-summary-sentence-case:
+    subject:
+      type: Example
+      property: ID
 ignore:
   - .github
