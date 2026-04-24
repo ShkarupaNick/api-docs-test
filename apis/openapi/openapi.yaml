@@ -7,9 +7,6 @@ info:
     name: Contact our support
     email: contact@example.com
     url: http://example.com/contact
-  license:
-    name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
   x-logo:
     url: 'https://redocly.github.io/openapi-template/logo.png'
     altText: OpenAPI example logo
