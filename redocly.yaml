@@ -25,3 +25,5 @@ rules:
 
 ignore:
   - .github
+icon:
+  - rocket
