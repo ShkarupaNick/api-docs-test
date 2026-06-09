@@ -5,7 +5,7 @@ It's a **great** way to be introduced to the workflow of making changes.
 
 Afterwards, you can adjust with your own content.
 
-## `index.md`
+## `index.tsx`
 This very page is the landing page for the project website.
 It is a Markdown file (Markdoc tags are also supported).
 
