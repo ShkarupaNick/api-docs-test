@@ -2,7 +2,7 @@ apis:
   main:
     root: ./openapi.yaml
 extends:
-  - minimal
+  - root
 rules:
   operation-tag-defined: error
   no-invalid-schema-examples: error
@@ -25,5 +25,3 @@ rules:
 
 ignore:
   - .github
-icon:
-  - rocket
