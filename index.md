@@ -11,6 +11,6 @@ It is a Markdown file (Markdoc tags are also supported).
 
 ## `openapi.yaml`
 
-The Museum API is a sample API that you can use to try out new API tools, to learn more about OpenAPI, or whatever else you need.
+The Zoo API is a sample API that you can use to try out new API tools, to learn more about OpenAPI, or whatever else you need.
 The [OpenAPI description](./openapi.yaml) can be found in `openapi.yaml`.
 You can also download it and use it as you wish.
