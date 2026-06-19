@@ -1,7 +1,6 @@
 openapi: 3.0.3
 info:
   title: Zoo API
-  description: API for managing a zoo
   version: 1.0.0
 servers:
   - url: https://api.zoo.example.com/v1
