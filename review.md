@@ -8,5 +8,4 @@ The Payments API provides **three** endpoints.
 - `POST /payments` — create a payment
 
 ## Supported regions
-
 This API is available in **two** regions: US, EU, and APAC.
