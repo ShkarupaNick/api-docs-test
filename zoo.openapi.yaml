@@ -1,0 +1,323 @@
+openapi: 3.0.3
+info:
+  title: Zoo API
+  description: API for managing a zoo
+  version: 1.0.0
+servers:
+  - url: https://api.zoo.example.com/v1
+paths:
+  /animals:
+    get:
+      summary: Get all animals
+      operationId: getAnimals
+      tags:
+        - Animals
+      parameters:
+        - name: species
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: habitat
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of animals
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal'
+    post:
+      summary: Add a new animal
+      operationId: createAnimal
+      tags:
+        - Animals
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnimalInput'
+      responses:
+        '201':
+          description: Animal created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal'
+        '400':
+          description: Invalid input
+  /animals/{id}:
+    get:
+      summary: Get an animal by ID
+      operationId: getAnimalById
+      tags:
+        - Animals
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Animal found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal'
+        '404':
+          description: Animal not found
+    put:
+      summary: Update an animal
+      operationId: updateAnimal
+      tags:
+        - Animals
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnimalInput'
+      responses:
+        '200':
+          description: Animal updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Animal'
+        '404':
+          description: Animal not found
+    delete:
+      summary: Delete an animal
+      operationId: deleteAnimal
+      tags:
+        - Animals
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Animal deleted successfully
+        '404':
+          description: Animal not found
+  /enclosures:
+    get:
+      summary: Get all enclosures
+      operationId: getEnclosures
+      tags:
+        - Enclosures
+      responses:
+        '200':
+          description: A list of enclosures
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Enclosure'
+    post:
+      summary: Create a new enclosure
+      operationId: createEnclosure
+      tags:
+        - Enclosures
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EnclosureInput'
+      responses:
+        '201':
+          description: Enclosure created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Enclosure'
+  /staff:
+    get:
+      summary: Get all staff members
+      operationId: getStaff
+      tags:
+        - Staff
+      responses:
+        '200':
+          description: A list of staff members
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Staff'
+    post:
+      summary: Add a new staff member
+      operationId: createStaff
+      tags:
+        - Staff
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StaffInput'
+      responses:
+        '201':
+          description: Staff member created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Staff'
+components:
+  schemas:
+    Animal:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        species:
+          type: string
+        age:
+          type: integer
+        habitat:
+          type: string
+        enclosureId:
+          type: string
+        healthStatus:
+          type: string
+          enum:
+            - healthy
+            - sick
+            - recovering
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+    AnimalInput:
+      type: object
+      required:
+        - name
+        - species
+      properties:
+        name:
+          type: string
+        species:
+          type: string
+        age:
+          type: integer
+        habitat:
+          type: string
+        enclosureId:
+          type: string
+        healthStatus:
+          type: string
+          enum:
+            - healthy
+            - sick
+            - recovering
+    Enclosure:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        type:
+          type: string
+        capacity:
+          type: integer
+        currentOccupancy:
+          type: integer
+        location:
+          type: string
+    EnclosureInput:
+      type: object
+      required:
+        - name
+        - type
+        - capacity
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        capacity:
+          type: integer
+        location:
+          type: string
+    Staff:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        firstName:
+          type: string
+        lastName:
+          type: string
+        role:
+          type: string
+          enum:
+            - zookeeper
+            - veterinarian
+            - manager
+            - guide
+        email:
+          type: string
+          format: email
+        assignedEnclosures:
+          type: array
+          items:
+            type: string
+    StaffInput:
+      type: object
+      required:
+        - firstName
+        - lastName
+        - role
+        - email
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        role:
+          type: string
+          enum:
+            - zookeeper
+            - veterinarian
+            - manager
+            - guide
+        email:
+          type: string
+          format: email
+        assignedEnclosures:
+          type: array
+          items:
+            type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  - bearerAuth: []
