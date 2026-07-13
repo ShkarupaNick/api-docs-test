@@ -2,7 +2,7 @@ apis:
   main:
     root: ./openapi.yaml
 extends:
-  - minimal
+  - high
 rules:
   operation-tag-defined: error
   no-invalid-schema-examples: error
@@ -22,6 +22,13 @@ rules:
     message: Example summary must be sentence cased.
     assertions:
       pattern: /^([A-Z]{2,}|[A-Z][^A-Z]*)\b(\s+(?:[A-Z]{2,}|[^A-Z]*)\b)*$/ # Sentence case but allow acronyms
+  rule/operation-id-kebab-case:
+    subject:
+      type: Operation
+      property: operationId
+    message: Operation ID must be in kebab-case.
+    assertions:
+      casing: kebab-case
 
 ignore:
   - .github
