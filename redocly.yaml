@@ -2,7 +2,7 @@ apis:
   main:
     root: ./openapi.yaml
 extends:
-  - recommended
+  - high
 rules:
   operation-tag-defined: error
   no-invalid-schema-examples: error
@@ -28,7 +28,7 @@ rules:
       property: operationId
     message: Operation ID must be in kebab-case.
     assertions:
-      pattern: /^[a-z][a-z0-9-]*$/
+      casing: kebab-case
 
 ignore:
   - .github
