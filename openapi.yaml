@@ -15,8 +15,8 @@ servers:
 paths:
   /museum-hours:
     get:
-      summary: Get museum hours
-      description: Get upcoming museum operating hours.
+      summary: List museum hours
+      description: List upcoming museum operating hours.
       operationId: getMuseumHours
       tags:
         - Operations
