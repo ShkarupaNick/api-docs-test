@@ -94,7 +94,7 @@ paths:
   /special-events/{eventId}:
     get:
       summary: Get special event
-      description: Get details about a special event
+      description: Get details about a special event.
       operationId: getSpecialEvent
       tags:
         - Events
