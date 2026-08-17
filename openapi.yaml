@@ -41,7 +41,7 @@ paths:
   /special-events:
     post:
       summary: Create special events
-      description: Creates a new special event for the museum.
+      description: Creates a new special event for the museum
       operationId: createSpecialEvent
       tags:
         - Events
@@ -68,7 +68,7 @@ paths:
           $ref: '#/components/responses/BadRequest'
     get:
       summary: Get special events
-      description: Return a list of upcoming special events at the museum.
+      description: Return a list of upcoming special events at the museum
       operationId: listSpecialEvents
       tags:
         - Events
@@ -94,7 +94,7 @@ paths:
   /special-events/{eventId}:
     get:
       summary: Get special event
-      description: Get details about a special event.
+      description: Get details about a special event
       operationId: getSpecialEvent
       tags:
         - Events
