@@ -2,7 +2,7 @@ apis:
   main:
     root: ./openapi.yaml
 extends:
-  - modern
+  - modern2
 rules:
   operation-tag-defined: error
   no-invalid-schema-examples: error
