@@ -2,7 +2,7 @@ apis:
   main:
     root: ./openapi.yaml
 extends:
-  - modern2
+  - recommended
 rules:
   operation-tag-defined: error
   no-invalid-schema-examples: error
@@ -25,3 +25,5 @@ rules:
 
 ignore:
   - .github
+code:
+  languge: typescript
