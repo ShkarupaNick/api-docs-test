@@ -26,4 +26,4 @@ rules:
 ignore:
   - .github
 code:
-  languge: typescript
+  languge: js
