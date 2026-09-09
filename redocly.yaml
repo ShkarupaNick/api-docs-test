@@ -2,7 +2,7 @@ apis:
   main:
     root: ./openapi.yaml
 extends:
-  - recommended
+  - high
 rules:
   operation-tag-defined: error
   no-invalid-schema-examples: error
@@ -25,5 +25,3 @@ rules:
 
 ignore:
   - .github
-code:
-  languge: js
