@@ -1,0 +1,1 @@
+Each description OpenApi should ends with dot.
