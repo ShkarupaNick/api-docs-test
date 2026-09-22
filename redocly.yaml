@@ -2,9 +2,7 @@ apis:
   main:
     root: ./openapi.yaml
 extends:
-  - recommended
-notifications:
-  - slack
+  - high
 rules:
   operation-tag-defined: error
   no-invalid-schema-examples: error
