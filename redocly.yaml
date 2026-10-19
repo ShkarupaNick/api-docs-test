@@ -25,4 +25,4 @@ rules:
 
 ignore:
   - .github
-loglevel: trace
+loglevel: trace2
