@@ -25,4 +25,5 @@ rules:
 
 ignore:
   - .github
-loglevel: trace2
+
+naruto: off
