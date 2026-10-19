@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: Redocly Museum API
+  title: Redocly Museum API 2
   description: Imaginary, but delightful Museum API for interacting with museum services and information. Built with love by Redocly.
   version: 1.1.1
   termsOfService: 'https://redocly.com/subscription-agreement/'
@@ -15,8 +15,8 @@ servers:
 paths:
   /museum-hours:
     get:
-      summary: Get museum hours
-      description: Get upcoming museum operating hours.
+      summary: List museum hours
+      description: List upcoming museum operating hours.
       operationId: getMuseumHours
       tags:
         - Operations
@@ -66,10 +66,8 @@ paths:
                   $ref: "#/components/examples/CreateSpecialEventResponseExample"
         "400":
           $ref: '#/components/responses/BadRequest'
-        "404":
-          $ref: '#/components/responses/NotFound'
     get:
-      summary: List special events
+      summary: Get special events
       description: Return a list of upcoming special events at the museum.
       operationId: listSpecialEvents
       tags:
