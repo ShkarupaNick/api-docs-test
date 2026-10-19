@@ -25,7 +25,4 @@ rules:
 
 ignore:
   - .github
-
-
-notifications:
-  - email
+loglevel: trace
